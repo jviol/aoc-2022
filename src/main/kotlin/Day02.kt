@@ -1,10 +1,5 @@
+import utils.indexOfOrThrow
 import java.io.File
-
-fun String.indexOfOrThrow(c: Char): Int {
-    val i = indexOf(c)
-    if (i < 0) throw IllegalArgumentException()
-    return i
-}
 
 fun shapePoints(x: Char): Int = "XYZ".indexOfOrThrow(x) + 1
 
