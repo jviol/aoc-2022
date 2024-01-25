@@ -1,13 +1,13 @@
 package utils
 
-fun String.indexOfOrThrow(c: Char): Int {
+fun CharSequence.indexOfOrThrow(c: Char): Int {
     val i = indexOf(c)
     if (i < 0) throw IllegalArgumentException()
     return i
 }
 
 
-fun String.indexesOf(c: Char) =
-    mapIndexedNotNull() { index, elem ->
+fun CharSequence.indexesOf(c: Char): List<Int> =
+    mapIndexedNotNull { index, elem ->
         index.takeIf { elem == c }
     }
